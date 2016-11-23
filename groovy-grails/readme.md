@@ -40,4 +40,8 @@ class HelloworldController {
 
 Navigate to [localhost:8080/helloworld](localhost:8080/helloworld) et voilà, a simple REST service is done!
 
+## Dependencies
+* Groovy
+* Grails
+
 This tutorial was taken from the very well documented Grails [getting started guide](http://docs.grails.org/latest/guide/gettingStarted.html).
