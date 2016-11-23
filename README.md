@@ -1,2 +1,1 @@
-# helloworld-rest
-"Hello World!" REST service in multiple languages
+# "Hello World!" REST service in various languages and frameworks
