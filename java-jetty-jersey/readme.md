@@ -49,4 +49,7 @@ public class App {
 
 ```
 
+## Dependencies
+* Java
+
 This example was adapted from [here](http://nikgrozev.com/2014/10/16/rest-with-embedded-jetty-and-jersey-in-a-single-jar-step-by-step/)
