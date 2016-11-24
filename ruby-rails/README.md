@@ -99,3 +99,5 @@ and enjoy our favorite message :-).
 ## Dependencies
 * Ruby
 * Rails
+
+This example, as well as many others can be found on the [official Ruby on Rails website](http://guides.rubyonrails.org/getting_started.html).
