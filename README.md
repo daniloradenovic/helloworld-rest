@@ -1,12 +1,12 @@
-## Hello Rest!
+# Hello Rest!
 
-Here is an implementation of "Hello World!" REST service in various languages and frameworks. 
+"Hello World!" REST service implemented in various languages and frameworks. 
 
 Some language/framework combinations offer much more features besides the plain
 REST GET call, with full blown project bootstrapping that allows easy addition of new features,
 while others provide only the required "Hello World!" response in as few lines as possible.
 
-### Python
+## Python
 The winner of this small competition is probably Python, with all the code fitting in 10 lines
 of code
 
@@ -26,14 +26,14 @@ if __name__ == '__main__':
 The only required dependency is `flask`, which is installed with `pip` - Python's package manager, which
  comes with Python, and Python is in turn installed by default on most Unix distributions.
 
-### Rails
+## Rails
 
 Rails is a popular web framework, famous for quick project bootstrapping. Our `Hello World!` REST example was
 no exception - by calling `rails new myapp` we can generate a full blown project - including
 some predefined views and controllers, support for i18n, configuration files and test directories.
 With a few more lines of code, we are able to reach our desired goal, all in a matter of minutes.
 
-### Grails
+## Grails
 
 Groovy counterpart of popular Rails framework, named Grails, provides that familiar ease
 of setup and convention-over-configuration approach as Rails does. Besides
@@ -42,7 +42,7 @@ Gradle for build management (which is also written in Groovy!),
 whose .gradle files are usually a joy to read and skim through, compared to XML based
 variants.
 
-### Java/Scala and Play Framework
+## Java/Scala and Play Framework
 
 Play framework also enables creating full blown web applications, with easy bootstrapping with
 `activator new myapp`. In addition to what Rails/Grails
@@ -82,7 +82,7 @@ class HomeController @Inject() extends Controller {
 ```
 And the end result is the same.
 
-### Kotlin and Spring Boot
+## Kotlin and Spring Boot
 
 This is quite an interesting combination. Spring is a well-established framework and was
 [the most widely used Java web framework in 2012](https://zeroturnaround.com/rebellabs/the-curious-coders-java-web-frameworks-comparison-spring-mvc-grails-vaadin-gwt-wicket-play-struts-and-jsf/). 
@@ -110,7 +110,7 @@ open class HelloWorldController {
 }
 ```
 
-### Go
+## Go
 
 This example, besides being really short in terms of lines of code,
  has one interesting feature - apart from Go lang installation, it has 0
@@ -134,7 +134,7 @@ This example, besides being really short in terms of lines of code,
  }
  ```
 
-### Node.js
+## Node.js
 
 For those who are accustomed to JavaScript, node.js brings a pleasantly
 simple way of creating a RESTful web service. Design of this simple application
@@ -165,4 +165,24 @@ var appRouter = function (app) {
 }
 
 module.exports = appRouter;
+```
+
+## Crystal
+"A compiled language with Ruby like syntax and type inference." Although it is not 
+yet production ready, creating and running our "Hello World!" REST example is pretty easy.
+
+All the code is here:
+
+```ruby
+require "http/server"
+
+server = HTTP::Server.new(8080) do |context|
+  if context.request.path == "/helloworld"
+    context.response.content_type = "text/plain"
+    context.response.print "Hello world!"
+  end
+end
+
+puts "Listening on http://localhost:8080"
+server.listen
 ```
