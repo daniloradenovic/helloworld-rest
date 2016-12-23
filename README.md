@@ -26,14 +26,40 @@ if __name__ == '__main__':
 The only required dependency is `flask`, which is installed with `pip` - Python's package manager, which
  comes with Python, and Python is in turn installed by default on most Unix distributions.
 
-## Rails
+You can find the whole Python/Flask example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/python-flask).
 
-Rails is a popular web framework, famous for quick project bootstrapping. Our `Hello World!` REST example was
+## Ruby/Rails
+
+Rails is a popular web framework, famous for quick project bootstrapping. Our `Hello World!` REST example is
 no exception - by calling `rails new myapp` we can generate a full blown project - including
 some predefined views and controllers, support for i18n, configuration files and test directories.
 With a few more lines of code, we are able to reach our desired goal, all in a matter of minutes.
 
-## Grails
+We need a controller
+
+```ruby
+class HelloWorldController < ApplicationController
+  def helloworld
+    render plain: "Hello World!"
+  end
+end
+```
+
+and change the `config/routes.rb` file to redirect `/helloworld` requests
+to our controller
+
+```ruby
+Rails.application.routes.draw do
+  get 'hello_world/helloworld'
+
+  get 'helloworld', to: 'hello_world#helloworld'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+```
+
+You can find the whole Ruby/Rails example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/ruby-rails).
+
+## Groovy/Grails
 
 Groovy counterpart of popular Rails framework, named Grails, provides that familiar ease
 of setup and convention-over-configuration approach as Rails does. Besides
@@ -41,6 +67,21 @@ running inside a JVM and making Java developers feel more like at home, it also 
 Gradle for build management (which is also written in Groovy!),
 whose .gradle files are usually a joy to read and skim through, compared to XML based
 variants.
+
+We just need to modify the generated controller
+
+```groovy
+package groovy.grails
+
+class HelloworldController {
+
+    def index() {
+        render "Hello World!"
+    }
+}
+```
+
+You can find the whole Groovy/Grails example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/groovy-grails).
 
 ## Java/Scala and Play Framework
 
@@ -82,6 +123,10 @@ class HomeController @Inject() extends Controller {
 ```
 And the end result is the same.
 
+You can find the whole Java/Play example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/java-play).
+
+You can find the whole Scala/Play example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/scala-play).
+
 ## Kotlin and Spring Boot
 
 This is quite an interesting combination. Spring is a well-established framework and was
@@ -110,6 +155,8 @@ open class HelloWorldController {
 }
 ```
 
+You can find the whole Kotlin/Spring Boot example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/kotlin-springboot).
+
 ## Go
 
 This example, besides being really short in terms of lines of code,
@@ -134,7 +181,9 @@ This example, besides being really short in terms of lines of code,
  }
  ```
 
-## Node.js
+You can find the whole Go example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/go).
+
+## JavaScript with node.js
 
 For those who are accustomed to JavaScript, node.js brings a pleasantly
 simple way of creating a RESTful web service. Design of this simple application
@@ -167,6 +216,8 @@ var appRouter = function (app) {
 module.exports = appRouter;
 ```
 
+You can find the whole JavaScript/node.js example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/javascript-nodejs).
+
 ## Crystal
 "A compiled language with Ruby like syntax and type inference." Although it is not 
 yet production ready, creating and running our "Hello World!" REST example is pretty easy.
@@ -186,3 +237,5 @@ end
 puts "Listening on http://localhost:8080"
 server.listen
 ```
+
+You can find the whole Crystal example [here](https://github.com/daniloradenovic/helloworld-rest/tree/master/crystal).
